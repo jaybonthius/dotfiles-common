@@ -1,7 +1,7 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/jaybonthius/nvim.git
-	branch = master
+	branch = main
 [submodule ".config/zellij"]
 	path = .config/zellij
 	url = https://github.com/jaybonthius/zellij-config.git
