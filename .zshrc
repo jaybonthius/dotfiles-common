@@ -45,6 +45,39 @@ whoops() {
     fi
 }
 
+zdev() {
+    # Check if argument is provided
+    if [[ $# -eq 0 ]]; then
+        echo "Usage: zdev <directory>"
+        echo "Example: zdev ../../my_repo"
+        return 1
+    fi
+
+    local target_dir="$1"
+    
+    # Convert to absolute path and check if directory exists
+    local abs_path=$(realpath "$target_dir" 2>/dev/null)
+    if [[ $? -ne 0 ]] || [[ ! -d "$abs_path" ]]; then
+        echo "Error: Directory '$target_dir' does not exist"
+        return 1
+    fi
+
+    # Extract directory name for session name
+    local session_name=$(basename "$abs_path")
+    
+    # Change to the target directory
+    cd "$abs_path"
+    
+    # Check if session already exists (only check running sessions, not exited ones)
+    if zellij list-sessions 2>/dev/null | grep -v "(EXITED" | grep -q "^$session_name\s"; then
+        echo "Attaching to existing session: $session_name"
+        zellij attach "$session_name"
+    else
+        echo "Creating new session: $session_name"
+        zellij --layout dev-layout attach -c "$session_name"
+    fi
+}
+
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # "before any calls to compdef"
 # actually i don't really like autocomplete... not sure though
