@@ -13,6 +13,9 @@ function fish_greeting -d "What's up, fish?"
     set_color normal
 end
 
+# PATH
+set -gx PATH $PATH $HOME/.local/bin
+
 # starship
 starship init fish | source
 
@@ -42,7 +45,6 @@ alias rm trash
 function whoops
     git commit --amend --no-edit && git push --force-with-lease origin (git rev-parse --abbrev-ref HEAD)
 end
-export PATH="$PATH:$HOME/.local/bin"
 
 # set -e AWS_PROFILE
 
