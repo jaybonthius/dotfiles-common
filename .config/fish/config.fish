@@ -22,7 +22,6 @@ zoxide init --cmd cd fish | source
 # fzf
 set fzf_preview_dir_cmd eza --all --color=always
 fzf_configure_bindings --directory=\cf --git_log=\cg --git_status=\cs --processes=\cp
-fzf --fish | source
 set fzf_preview_file_cmd cat -n
 
 # aliases
