@@ -36,7 +36,10 @@ fi
 print_status "Installing fzf..."
 if [ ! -d "$HOME/.fzf" ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install --all
+    # ~/.fzf/install --all
+    # TODO: this installs keybindings and updates shell, which we don't want
+    # maybe this? 
+    # ~/.fzf/install --key-bindings --completion --no-update-rc --no-zsh --no-fish
     print_status "fzf installed successfully"
 else
     print_warning "fzf already installed, skipping..."
