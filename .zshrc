@@ -187,7 +187,6 @@ export PATH=$PATH:/home/ubuntu/go/bin/
 export PATH=$PATH:/usr/local/go/bin
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(zoxide init zsh)"
 
