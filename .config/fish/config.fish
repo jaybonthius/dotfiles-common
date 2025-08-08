@@ -14,7 +14,7 @@ function fish_greeting -d "What's up, fish?"
 end
 
 # PATH
-set -gx PATH $PATH $HOME/.local/bin
+set -gx PATH $PATH $HOME/.local/bin 
 
 # starship
 starship init fish | source
