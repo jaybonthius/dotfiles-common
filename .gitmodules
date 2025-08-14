@@ -6,3 +6,6 @@
 	path = .config/zellij
 	url = https://github.com/jaybonthius/zellij-config.git
 	branch = main
+[submodule ".config/helix"]
+	path = .config/helix
+	url = https://github.com/jaybonthius/helix.git
