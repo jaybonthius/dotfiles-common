@@ -1,17 +1,17 @@
 function zdev --description "Open a zellij dev layout for a specific directory"
     # Check if argument is provided
     if test (count $argv) -eq 0
-        echo "Usage: zdev <directory>"
-        echo "Example: zdev ../../my_repo"
+        echo "Usage: zdev <dir_name>"
+        echo "Example: zdev my_repo"
         return 1
     end
 
     set target_dir $argv[1]
     
-    # Convert to absolute path and check if directory exists
-    set abs_path (realpath $target_dir 2>/dev/null)
-    if test $status -ne 0; or not test -d $abs_path
-        echo "Error: Directory '$target_dir' does not exist"
+    # Use zoxide to find the directory
+    set abs_path (zoxide query $target_dir 2>/dev/null)
+    if test $status -ne 0
+        echo "Error: Directory '$target_dir' not found in zoxide database"
         return 1
     end
 
