@@ -14,7 +14,7 @@ function fish_greeting -d "What's up, fish?"
 end
 
 # PATH
-set -gx PATH $PATH $HOME/.local/bin 
+set -gx PATH $PATH $HOME/.local/bin
 
 # starship
 starship init fish | source
@@ -28,12 +28,13 @@ fzf_configure_bindings --history=\cr --directory=\cf --git_log=\cg --git_status=
 set fzf_preview_file_cmd cat -n
 
 # aliases
-alias m "make"
-alias c "clear"
-alias d "exit"
+alias m make
+alias c clear
+alias d exit
+alias lg lazygit
 alias l "make lint"
 alias r "make run"
-alias pt "pytest"
+alias pt pytest
 alias gt "go tool"
 alias vim nvim
 alias ls eza
@@ -54,8 +55,3 @@ end
 # set -gx GOPATH "$HOME/go"
 # set -gx PATH "$PATH:$GOPATH/bin"
 # set -gx GOROOT "/opt/homebrew/Cellar/go/1.24.5/libexec"
-
-# YAZELIX START - Yazelix managed configuration (do not modify this comment)
-# delete this whole section to re-generate the config, if needed
-source "$HOME/.config/yazelix/shells/fish/yazelix_fish_config.fish"
-# YAZELIX END - Yazelix managed configuration (do not modify this comment)
