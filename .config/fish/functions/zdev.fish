@@ -22,7 +22,7 @@ function zdev --description "Open a zellij dev layout for a specific directory"
     cd $abs_path
     
     # Check if session already exists (only check running sessions, not exited ones)
-    if zellij list-sessions 2>/dev/null | grep -v "(EXITED" | grep -q "^$session_name\s"
+    if zellij list-sessions 2>/dev/null | grep -v "\\(EXITED" | grep -q "^$session_name\s"
         echo "Attaching to existing session: $session_name"
         zellij attach $session_name
     else
