@@ -54,3 +54,8 @@ end
 # set -gx GOPATH "$HOME/go"
 # set -gx PATH "$PATH:$GOPATH/bin"
 # set -gx GOROOT "/opt/homebrew/Cellar/go/1.24.5/libexec"
+
+# YAZELIX START - Yazelix managed configuration (do not modify this comment)
+# delete this whole section to re-generate the config, if needed
+source "$HOME/.config/yazelix/shells/fish/yazelix_fish_config.fish"
+# YAZELIX END - Yazelix managed configuration (do not modify this comment)
