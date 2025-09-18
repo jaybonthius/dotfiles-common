@@ -217,3 +217,4 @@ zstyle ':completion:*:make:*:targets' call-command true
 zstyle ':completion:*:*:make:*' tag-order 'targets' export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 eval "$(tv init zsh)"
+export PATH=$PATH:/usr/local/go/bin

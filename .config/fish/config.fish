@@ -41,7 +41,6 @@ alias ls eza
 alias cat bat
 alias grep rg
 alias find fd
-alias rm trash
 
 function whoops
     git commit --amend --no-edit && git push --force-with-lease origin (git rev-parse --abbrev-ref HEAD)
@@ -55,3 +54,4 @@ end
 # set -gx GOPATH "$HOME/go"
 # set -gx PATH "$PATH:$GOPATH/bin"
 # set -gx GOROOT "/opt/homebrew/Cellar/go/1.24.5/libexec"
+set -gx PATH $PATH /usr/local/go/bin
